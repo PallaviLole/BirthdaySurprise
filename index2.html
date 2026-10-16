@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101329">
+  <title>For Shravan 💙</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1022;
+      --card: rgba(27, 33, 64, 0.76);
+      --purple: #bba4ff;
+      --pink: #f2c6ee;
+      --white: #f4f1ff;
+      --muted: #c2c5df;
+      --border: rgba(192, 174, 255, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 15% 10%, #20214b 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 40%, #241b48 0%, transparent 30%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 4px;
+    }
+
+    .stars-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.55;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.15; transform: scale(0.8); }
+      to { opacity: 0.9; transform: scale(1.5); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(187, 164, 255, 0.15); }
+      50% { box-shadow: 0 0 40px rgba(187, 164, 255, 0.35); }
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 22px;
+      position: relative;
+    }
+
+    .moon {
+      font-size: 55px;
+      margin-bottom: 25px;
+      animation: float 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(211, 191, 255, 0.4));
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1.15;
+      max-width: 800px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #e7d7ff, #f6c9ee, #b9d4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 530px;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .primary-btn {
+      margin-top: 32px;
+      border: 1px solid rgba(226, 212, 255, 0.35);
+      background: linear-gradient(120deg, #7660ba, #493b83);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 5px 25px rgba(99, 75, 164, 0.2);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(160, 130, 255, 0.3);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 22px;
+      font-size: 0.8rem;
+      color: #969bbc;
+      animation: float 3s infinite;
+    }
+
+    section.content-section {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 90px 22px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    .wishes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .wish-btn {
+      min-height: 90px;
+      background: rgba(33, 39, 75, 0.8);
+      color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 17px 10px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .wish-btn:hover {
+      background: rgba(94, 76, 145, 0.55);
+      transform: translateY(-4px);
+      border-color: rgba(218, 199, 255, 0.5);
+    }
+
+    .wish-btn span {
+      display: block;
+      color: var(--purple);
+      font-size: 0.75rem;
+      margin-bottom: 7px;
+    }
+
+    .wish-btn strong {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .wish-reveal {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 1.9;
+      color: #eee4ff;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .wish-reveal.show {
+      display: block;
+    }
+
+    .letter {
+      line-height: 1.95;
+      color: #e7e4f7;
+      font-size: 0.98rem;
+    }
+
+    .letter p {
+      margin-bottom: 19px;
+    }
+
+    .letter p:last-child {
+      margin-bottom: 0;
+      color: var(--pink);
+    }
+
+    .chat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .chat-bubble {
+      max-width: 82%;
+      padding: 15px 18px;
+      border-radius: 18px;
+      line-height: 1.7;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .chat-bubble .sender {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .from-shravan {
+      align-self: flex-start;
+      background: #222744;
+      border: 1px solid rgba(167, 182, 255, 0.17);
+      border-bottom-left-radius: 4px;
+    }
+
+    .from-shravan .sender {
+      color: #b7c8ff;
+    }
+
+    .from-pallavi {
+      align-self: flex-end;
+      background: #39294e;
+      border: 1px solid rgba(237, 183, 233, 0.16);
+      border-bottom-right-radius: 4px;
+    }
+
+    .from-pallavi .sender {
+      color: #f1c8ee;
+    }
+
+    .small-note {
+      margin-top: 20px;
+      text-align: center;
+      color: #a7accb;
+      font-size: 0.85rem;
+    }
+
+    .baal-card {
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .baal-emoji {
+      font-size: 45px;
+      margin-bottom: 14px;
+    }
+
+    .baal-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .baal-card > p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .reaction {
+      display: none;
+      margin-top: 25px;
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(132, 99, 177, 0.16);
+      border: 1px solid rgba(228, 198, 255, 0.2);
+      line-height: 1.9;
+      text-align: left;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .reaction.show {
+      display: block;
+    }
+
+    .reaction .big-reaction {
+      text-align: center;
+      font-size: 1.45rem;
+      color: var(--pink);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .reaction p {
+      margin-bottom: 13px;
+    }
+
+    .reaction p:last-child {
+      margin-bottom: 0;
+      text-align: center;
+      color: var(--purple);
+    }
+
+    .ending-intro {
+      text-align: center;
+      padding: 90px 22px 65px;
+    }
+
+    .ending-intro h2 {
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      margin: 15px 0;
+    }
+
+    .ending-intro p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* FINAL MIDNIGHT SCREEN */
+
+    .final-screen {
+      position: relative;
+      min-height: 100svh;
+      padding: 75px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 43%, rgba(75, 55, 131, 0.3), transparent 52%),
+        linear-gradient(180deg, #0b1022, #10142e 55%, #090d1c);
+      isolation: isolate;
+    }
+
+    .final-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .final-star {
+      position: absolute;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(225, 216, 255, 0.8);
+      opacity: 0;
+      animation: starAppear 2s ease forwards, twinkle 3s ease-in-out 2s infinite alternate;
+    }
+
+    @keyframes starAppear {
+      from { opacity: 0; transform: scale(0.2); }
+      to { opacity: 0.8; transform: scale(1); }
+    }
+
+    .final-content {
+      width: 100%;
+      max-width: 650px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .final-date {
+      color: #aaa6d1;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
+    }
+
+    .envelope {
+      width: 112px;
+      height: 82px;
+      position: relative;
+      margin: 0 auto 42px;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #c7a8ff, #7962b6);
+      animation: envelopeGlow 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(185, 153, 255, 0.3));
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(35deg, transparent 49%, #e6d5ff 50%, transparent 52%),
+                  linear-gradient(-35deg, transparent 49%, #bda4f0 50%, transparent 52%);
+      border-radius: 8px;
+      opacity: 0.95;
+    }
+
+    .envelope::after {
+      content: "♥";
+      position: absolute;
+      top: 26px;
+      left: 42px;
+      color: #fff0ff;
+      font-size: 25px;
+      text-shadow: 0 0 12px rgba(255, 226, 255, 0.8);
+    }
+
+    @keyframes envelopeGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(185, 153, 255, 0.25));
+        transform: translateY(0);
+      }
+      50% {
+        filter: drop-shadow(0 0 32px rgba(203, 168, 255, 0.6));
+        transform: translateY(-5px);
+      }
+    }
+
+    .final-message {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      line-height: 1.8;
+      color: #f0e8ff;
+      margin: 0 auto 22px;
+    }
+
+    .final-message.second {
+      color: #d8d2f5;
+      margin-bottom: 0;
+    }
+
+    .final-divider {
+      width: 65px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a994ed, transparent);
+      margin: 32px auto;
+    }
+
+    .final-footnote {
+      color: #9698bc;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      background: #090d1c;
+      color: #8d91b3;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 650px) {
+      section.content-section {
+        padding: 65px 17px;
+      }
+
+      .wishes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .wish-btn {
+        min-height: 84px;
+        padding: 14px 8px;
+      }
+
+      .wish-btn strong {
+        font-size: 0.87rem;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .chat-bubble {
+        max-width: 94%;
+        font-size: 0.91rem;
+      }
+
+      .final-screen {
+        padding: 65px 23px;
+      }
+
+      .final-message {
+        line-height: 1.7;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars-bg" id="backgroundStars"></div>
+
+  <!-- OPENING -->
+  <header class="hero" id="home">
+    <div class="moon">🌙</div>
+    <div class="eyebrow">A little something for you</div>
+
+    <h1>
+      Hey, <span class="gradient-text">Shravan!</span> 💙
+    </h1>
+
+    <p>
+      Sooo… someone has a birthday coming up. 👀
+      And someone else may or may not have prepared a little surprise.
+      Any guesses? 😂💌
+    </p>
+
+    <button class="primary-btn" onclick="scrollToSection('wishes')">
+      Open your surprise ✨
+    </button>
+
+    <div class="scroll-note">A little surprise awaits ↓</div>
+  </header>
+
+  <main>
+    <!-- 18 BIRTHDAY WISHES -->
+    <section class="content-section" id="wishes">
+      <div class="section-heading">
+        <div class="eyebrow">Chapter 01</div>
+        <h2>18 little wishes for you 💌</h2>
+        <p>
+          Eighteen little reasons to smile.
+          Tap each card to reveal a wish! 🌙
+        </p>
+      </div>
+
+      <div class="wishes-grid" id="wishesGrid"></div>
+
+      <div class="card wish-reveal" id="wishReveal" aria-live="polite">
+      </div>
+    </section>
+
+    <!-- FRIENDSHIP LETTER -->
+    <section class="content-section" id="letter">
+      <div class="section-heading">
+        <div class="eyebrow">Chapter 02</div>
+        <h2>A little letter 💌</h2>
+        <p>Something I wanted you to know.</p>
+      </div>
+
+      <div class="card letter">
+        <p>Hey Shravan, 💗</p>
+
+        <p>
+          Happy birthday in advance! I know we might not get to talk
+          the way we planned on your actual birthday, so I wanted to
+          give you a little something before the day arrives.
+        </p>
+
+        <p>
+          I'm really glad we get to talk every day again.
+          Our conversations can be funny, random or unexpectedly
+          meaningful, and that's what makes them special.
+        </p>
+
+        <p>
+          I hope this new year brings you happiness, peace, good people
+          and countless reasons to laugh. You deserve lovely things
+          and moments that make you proud of yourself. 🎂✨
+        </p>
+
+        <p>
+          I'm genuinely glad that we became friends.
+          Our random talks, little arguments, bakbak, and all those
+          small moments have become special in their own way.
+        </p>
+
+        <p>
+          Thank you for being someone I can talk to and share random
+          things with. I hope our friendship keeps growing with trust,
+          understanding, laughter, and lots of silly conversations. 😂💙
+        </p>
+	
+<p>Some people become a part of our daily routine without even realizing how special they've become. I'm glad you're one of those people, Shravan. 💗</p>
+
+        <p>
+          And while you're busy working towards your dreams,
+          don't forget to take care of yourself, too.
+          I hope life gives you plenty of reasons to smile,
+          moments to feel proud of yourself, and people who
+          genuinely wish the best for you. 🌙✨
+        </p>
+
+        <p>
+          Once again, happy birthday in advance, Shravan! 💙
+          I hope your special day brings you the happiness you deserve.
+        </p>
+
+        <p>— Your soulmate, Pallavi 💗</p>
+      </div>
+    </section>
+
+    <!-- LITTLE CHAT MEMORIES -->
+    <section class="content-section" id="memories">
+      <div class="section-heading">
+        <div class="eyebrow">Chapter 03</div>
+        <h2>Little chat memories 😂</h2>
+        <p>
+          Just some random moments that deserve a place here.
+          Because apparently, we can turn anything into bakbak. 😭
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="chat-list">
+          <div class="chat-bubble from-shravan">
+            <span class="sender">Shravan 💙</span>
+            Aaj cha status kai? Kiti study keli?
+          </div>
+
+          <div class="chat-bubble from-pallavi">
+            <span class="sender">Pallavi 💗</span>
+            Kelay. Karaycha hota tevdh.
+          </div>
+
+          <div class="chat-bubble from-shravan">
+            <span class="sender">Shravan 💙</span>
+            Sarad sang na… kasala ulat boltoy yr.
+          </div>
+
+          <div class="chat-bubble from-pallavi">
+            <span class="sender">Pallavi 💗</span>
+            Sangitl na! Kela mhnun.
+          </div>
+
+          <div class="chat-bubble from-shravan">
+            <span class="sender">Shravan 💙</span>
+            Late reply manje kaam madha madhat yeth aahe baal,
+            mi kai karu saang 🥲
+          </div>
+        </div>
+
+        <p class="small-note">
+          Normal conversation? Never heard of it. 😂💙
+        </p>
+      </div>
+    </section>
+
+    <!-- BAAL REACTION SURPRISE -->
+    <section class="content-section" id="secret">
+      <div class="section-heading">
+        <div class="eyebrow">Chapter 04</div>
+        <h2>A tiny little secret 🤭</h2>
+        <p>
+          There's one word that deserves its own section.
+          You probably know which one. 👀
+        </p>
+      </div>
+
+      <div class="card baal-card">
+        <div class="baal-emoji">🥹💗</div>
+        <h3>The word is… "baal" 💙</h3>
+
+        <p>
+          You might say it casually, but someone's reaction
+          is a completely different story. 😂
+        </p>
+
+        <button class="primary-btn" id="reactionButton"
+          onclick="revealReaction()" aria-expanded="false"
+          aria-controls="baalReaction">
+          💌 Reveal Pallavi's reaction
+        </button>
+
+        <div class="reaction" id="baalReaction" aria-live="polite">
+          <div class="big-reaction">AREYYYY SHRAVANNN 😭💗</div>
+
+          <p>Tu mala baal mhatlas naaa… 🥹💙</p>
+
+          <p>
+            Mala kharach khup bhari vatta re!
+            Ekdam happy hote mi… chehryavar aapoaap smile yete. 🥹🫶
+          </p>
+
+          <p>
+            Tujhya tya eka chhotyasha word ne pan mala evdha anand hoto,
+            he tula mahit tari aahe kaaa? 😭💗
+          </p>
+
+          <p>
+            I don't know how to explain it… but when you call me baal,
+            something in me just melts. 🫠💙
+          </p>
+
+          <p>Pallavi.exe has melted successfully 😂💗</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY INTRO -->
+    <section class="ending-intro">
+      <div class="moon">🎂</div>
+      <div class="eyebrow">One more thing</div>
+      <h2 class="gradient-text">Happy Birthday, Shravan! 💙</h2>
+      <p>
+        Here's to a new year full of good things, new memories,
+        and plenty of reasons to smile. ✨
+      </p>
+
+      <button class="primary-btn" onclick="scrollToSection('finalScreen')">
+        One last little surprise 🌌
+      </button>
+    </section>
+
+    <!-- FINAL MIDNIGHT-BLUE SCREEN -->
+    <section class="final-screen" id="finalScreen">
+      <div class="final-stars" id="finalStars"></div>
+
+      <div class="final-content">
+        <div class="final-date">18 · 10 · A LITTLE MEMORY</div>
+
+        <div class="envelope" role="img" aria-label="A glowing envelope"></div>
+
+        <p class="final-message">
+          “Out of all the people I could've met,
+          I'm glad life let me meet you. 💗
+        </p>
+
+        <p class="final-message second">
+          And somewhere between all the random talks and silly moments,
+          you became a little part of my everyday happiness. 💙🌙”
+        </p>
+
+        <div class="final-divider"></div>
+
+        <div class="final-footnote">✦ A little surprise, just for you ✦</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with 💗, a little bakbak, and lots of good wishes.
+  </footer>
+
+  <script>
+    // CREATE BACKGROUND STARS
+    function createStars(containerId, count, className) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement("span");
+        star.className = className;
+
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+
+        const size = Math.random() * 2 + 1;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.animationDelay = Math.random() * 4 + "s";
+        star.style.animationDuration = (2 + Math.random() * 4) + "s";
+
+        container.appendChild(star);
+      }
+    }
+
+    createStars("backgroundStars", 90, "star");
+    createStars("finalStars", 110, "final-star");
+
+    // 18 CLICKABLE BIRTHDAY WISHES
+    const wishes = [
+      {
+        title: "Happiness",
+        emoji: "🌷",
+        message: "I hope happiness finds you even on the most ordinary days."
+      },
+      {
+        title: "Peace",
+        emoji: "🌙",
+        message: "May your mind find peace, even when life gets a little chaotic."
+      },
+      {
+        title: "Big dreams",
+        emoji: "✨",
+        message: "May you get closer to every dream you're working towards."
+      },
+      {
+        title: "Good people",
+        emoji: "🫶",
+        message: "May you always have genuine people around who want the best for you."
+      },
+      {
+        title: "More laughter",
+        emoji: "😂",
+        message: "I wish you a year full of laughter, silly jokes and unforgettable moments."
+      },
+      {
+        title: "New memories",
+        emoji: "📸",
+        message: "May this year give you memories you'll smile about for years."
+      },
+      {
+        title: "Confidence",
+        emoji: "💙",
+        message: "I hope you believe in yourself, especially on the days you doubt yourself."
+      },
+      {
+        title: "Little wins",
+        emoji: "🌟",
+        message: "May you celebrate every little step forward, not just the big achievements."
+      },
+      {
+        title: "Good health",
+        emoji: "🍀",
+        message: "Please take care of yourself and give yourself enough time to rest, too."
+      },
+      {
+        title: "New beginnings",
+        emoji: "🦋",
+        message: "May this year open doors to opportunities you never expected."
+      },
+      {
+        title: "Less stress",
+        emoji: "☁️",
+        message: "May your worries get lighter and your good days become more frequent."
+      },
+      {
+        title: "Self-belief",
+        emoji: "🌌",
+        message: "Never forget that you're capable of learning, growing and doing wonderful things."
+      },
+      {
+        title: "Unexpected joy",
+        emoji: "🎁",
+        message: "I hope the best moments of this year are the ones you never saw coming."
+      },
+      {
+        title: "Success",
+        emoji: "🏆",
+        message: "May your hard work bring you opportunities and results you feel proud of."
+      },
+      {
+        title: "More bakbak",
+        emoji: "💬",
+        message: "May there always be something random to talk about. Our bakbak has no expiry date. 😂"
+      },
+      {
+        title: "Real friendship",
+        emoji: "💗",
+        message: "May your life always have friendships where you can be your real, unfiltered self."
+      },
+      {
+        title: "Beautiful moments",
+        emoji: "🌠",
+        message: "May you find beauty in the little things and reasons to smile when you least expect them."
+      },
+      {
+        title: "Your best year",
+        emoji: "🎂",
+        message: "And finally, I hope this year becomes a chapter you'll always be glad you lived. Happy birthday! 💙"
+      }
+    ];
+
+    const wishesGrid = document.getElementById("wishesGrid");
+    const wishReveal = document.getElementById("wishReveal");
+
+    wishes.forEach((wish, index) => {
+      const button = document.createElement("button");
+      button.className = "wish-btn";
+      button.type = "button";
+      button.setAttribute("aria-label", `Reveal wish ${index + 1}: ${wish.title}`);
+
+      button.innerHTML = `
+        <span>WISH ${String(index + 1).padStart(2, "0")} ${wish.emoji}</span>
+        <strong>${wish.title}</strong>
+      `;
+
+      button.addEventListener("click", () => {
+        wishReveal.innerHTML = `
+          <div style="font-size: 2rem; margin-bottom: 10px;">
+            ${wish.emoji}
+          </div>
+          <strong style="color: #d8c7ff;">${wish.title}</strong>
+          <p style="margin-top: 10px;">${wish.message}</p>
+        `;
+
+        wishReveal.classList.remove("show");
+        void wishReveal.offsetWidth;
+        wishReveal.classList.add("show");
+
+        document.querySelectorAll(".wish-btn").forEach(btn => {
+          btn.style.borderColor = "";
+        });
+
+        button.style.borderColor = "#c9adff";
+        wishReveal.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+
+      wishesGrid.appendChild(button);
+    });
+
+    // REVEAL THE "BAAL" REACTION
+    function revealReaction() {
+      const reaction = document.getElementById("baalReaction");
+      const button = document.getElementById("reactionButton");
+
+      const isOpen = reaction.classList.toggle("show");
+
+      button.setAttribute("aria-expanded", String(isOpen));
+      button.textContent = isOpen
+        ? "🙈 Hide my reaction"
+        : "💌 Reveal Pallavi's reaction";
+
+      if (isOpen) {
+        setTimeout(() => {
+          reaction.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+        }, 100);
+      }
+    }
+
+    // SMOOTH NAVIGATION
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  </script>
+</body>
+</html>
